@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img.product_image {
+  image-rendering: 100px;
+  width: 100px;
+  min-height: 100px;
+}
+.product_name {
+  margin-top: 50px;
+}
+.buy_btn {
+  margin-top: 45px;
+}
+
+.header_product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_product span i {
+  font-size: 30px;
+}
+.items_count p {
+  position: absolute;
+  content: " ";
+  top: -12px;
+  right: 0;
+  z-index: 1;
+  color: #fff;
+  background-color: orange;
+  width: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+.items_count {
+  position: relative;
+}
+
+/* tbody.custome_tbl tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+} */
