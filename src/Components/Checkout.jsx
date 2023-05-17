@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/Context";
 
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -22,6 +23,9 @@ const Checkout = () => {
   const [cartIem, setCartItem] = useState(
     JSON.parse(localStorage.getItem("products"))
   );
+  const [auth, setAuth] = useAuth();
+
+  console.log("authauth", auth);
 
   return (
     <Fragment>
@@ -39,10 +43,8 @@ const Checkout = () => {
                 }}
                 validationSchema={SignupSchema}
                 onSubmit={(values) => {
-                  // same shape as initial values
                   localStorage.setItem("userDeatail", JSON.stringify(values));
                   navigate("/order");
-                  console.log("values", values);
                 }}
               >
                 {({ errors, touched }) => (

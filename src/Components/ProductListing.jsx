@@ -9,8 +9,7 @@ const ProductListing = () => {
     JSON.parse(localStorage.getItem("products"))
   );
   const navigate = useNavigate();
-  //   const [auth, setAuth] = useAuth();
-  console.log("count", count);
+  const [auth, setAuth] = useAuth();
 
   const getAllProducts = async () => {
     try {
@@ -27,6 +26,7 @@ const ProductListing = () => {
 
   useEffect(() => {
     getAllProducts();
+    setAuth(count);
   }, []);
 
   const handleNavigate = () => {
